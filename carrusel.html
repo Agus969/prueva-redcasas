@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel de Anuncios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="carrusel" class="carrusel flex-container">
+        <!-- Los anuncios se agregarán aquí dinámicamente -->
+    </div>
+
+    <script>
+        let anuncios;
+        let currentIndex = 0;
+
+        function cargarAnuncios() {
+            anuncios = JSON.parse(localStorage.getItem('anuncios')) || [];
+            mostrarAnuncio(currentIndex);
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % anuncios.length;
+                mostrarAnuncio(currentIndex);
+            }, 5000); // Cambia de anuncio cada 5 segundos
+        }
+
+        function mostrarAnuncio(index) {
+            if (anuncios.length === 0) {
+                document.getElementById('carrusel').innerHTML = '<p>No hay anuncios disponibles</p>';
+                return;
+            }
+            const anuncio = anuncios[index];
+
+            document.getElementById('carrusel').innerHTML = `
+                <div class="anuncio flex-container">
+                    <img src="${anuncio.imagen ? anuncio.imagen : 'images/' + anuncio.imagen}" alt="Anuncio">
+                    <h2>${anuncio.direccion}</h2>
+                    <p>Precio: ${anuncio.precio} €</p>
+                    <p>Metros: ${anuncio.metros} m² <span>📏</span></p>
+                    <p>Precio/m²: ${(anuncio.precio / anuncio.metros).toFixed(2)} €</p>
+                    <p>Camas: ${anuncio.habitaciones} <span>🛏️</span></p>
+                    <p>Baños: ${anuncio.banos} <span>🛁</span></p>
+                    <p>${anuncio.descripcion}</p>
+                </div>
+            `;
+        }
+
+        cargarAnuncios();
+    </script>
+</body>
+</html>

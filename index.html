@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación Inmobiliaria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Formulario de Publicación de Anuncios</h1>
+    <form id="form-anuncio">
+        <label for="image">Imagen</label>
+        <input type="file" id="image" accept="Imagen/jpeg">
+        
+        <label for="urlImage">Vincular Imagen (URL)</label>
+        <input type="url" id="urlImage" placeholder="Introduce la URL de la imagen">
+        
+        <label for="referencia">Referencia/ID del anuncio</label>
+        <input type="text" id="referencia" required>
+        
+        <label for="direccion">Dirección del inmueble</label>
+        <input type="text" id="direccion" required>
+        
+        <label for="precio">Precio total (en euros)</label>
+        <input type="number" id="precio" required>
+        
+        <label for="metros">Metros cuadrados</label>
+        <input type="number" id="metros" required>
+        
+        <label for="precioPorMetro">Precio por metro cuadrado <span>📏</span></label>
+        <input type="text" id="precioPorMetro" readonly>
+        
+        <label for="habitaciones">Número de habitaciones (camas) <span>🛏️</span></label>
+        <input type="number" id="habitaciones" required>
+        
+        <label for="banos">Número de baños <span>🛁</span></label>
+        <input type="number" id="banos" required>
+        
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion"></textarea>
+        
+        <button type="submit">Guardar Anuncio</button>
+    </form>
+
+    <h1>Formulario de Eliminación de Anuncios</h1>
+    <form id="form-eliminar">
+        <label for="referenciaEliminar">Referencia del anuncio a eliminar</label>
+        <input type="text" id="referenciaEliminar" required>
+        <button type="submit">Eliminar Anuncio</button>
+    </form>
+
+    <h1>Ver Anuncios</h1>
+    <button onclick="window.location.href='carrusel.html'">Ver Carrusel</button>
+    <h6>Te diriges a otra ventan con anuncios</h6>
+
+    <script src="script.js"></script>
+</body>
+</html>

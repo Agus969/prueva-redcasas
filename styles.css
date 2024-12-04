@@ -1,6 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: lightblue;
+   /* background-color: lightblue;*/
+    background-image:  url('imagen/imagen3.jpg');
+    background-size: cover;
+    background-position: center;
    /* font-size:10vw;*/
 }
 /*las letras aumentan*/
@@ -38,7 +41,16 @@ button {
 button:hover {
     background-color: #f50ee175;
 }
-/*.flex-container {
-    display: flex;
+footer {
+    text-align: center;
+    padding: 9px;
+    background-color: rgb(244, 15, 15);
+    color: white;
+}
+.carrusel-flex-container {
+    width: 500px;/*ancho*/
+    height: 685px;/*alto*/
+   /* display: flex;
     flex-wrap: nowrap;
     background-color: DodgerBlue;*/
+}

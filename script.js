@@ -10,6 +10,11 @@ function calcularPrecioPorMetro() {
     const precioPorMetro = metros ? (precio / metros).toFixed(2) : 0;
     document.getElementById('precioPorMetro').value = precioPorMetro;
 }
+reader.onload=(e)=>{
+    imagePreview.src=e.target.result;
+    imagePreview.style.width='100px';
+
+};
 /*const input = document.getElementById('descripcion');/funcion maximo de 20 caracteres
 input.addEventListener('input',() => {
     if(input.value.length>20) {

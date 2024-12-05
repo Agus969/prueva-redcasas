@@ -10,10 +10,17 @@ function calcularPrecioPorMetro() {
     const precioPorMetro = metros ? (precio / metros).toFixed(2) : 0;
     document.getElementById('precioPorMetro').value = precioPorMetro;
 }
-
+/*const input = document.getElementById('descripcion');/funcion maximo de 20 caracteres
+input.addEventListener('input',() => {
+    if(input.value.length>20) {
+        input.value=input.value.slice(0,20);
+        alert('has excedido el limite de caracteres.');
+    }
+});*/
 // Guardar anuncio en el almacenamiento local
 function guardarAnuncio(event) {
     event.preventDefault();
+   
     
     const anuncio = {
         imagen: document.getElementById('urlImage').value || document.getElementById('image').files[0]?.name,

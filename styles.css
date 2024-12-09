@@ -54,7 +54,7 @@ footer {
     flex-wrap: nowrap;
     background-color: DodgerBlue;*/
 }
-img {
+img {/*estylo tamaño foto anuncio*/
     width: 150%;
     height: auto;
   }

@@ -54,3 +54,7 @@ footer {
     flex-wrap: nowrap;
     background-color: DodgerBlue;*/
 }
+img {
+    width: 150%;
+    height: auto;
+  }
